@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="https://unpkg.com/alpinejs@3.9.5/dist/cdn.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+</style>
+
+<body style="font-family: 'Red Hat Display', sans-serif;" class="select-none"
+    x-data="{ darkMode: localStorage.getItem('dark') === 'true'}"
+    x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" x-bind:class="{ 'dark': darkMode }">
+    <div class="container px-5 pb-24 sm:px-24 bg-white dark:bg-gray-900 h-full w-full">
+        <header class="sticky top-0 bg-white dark:bg-gray-900 py-14 flex justify-between items-center">
+            <ul class="flex flex-row justify-center items-center space-x-10">
+                <li
+                    class="underline text-xl hover:underline underline-offset-8 text-gray-800 dark:text-white cursor-pointer">
+                    Home
+                </li>
+                <li class="text-xl hover:underline underline-offset-8 text-gray-800 dark:text-white  cursor-pointer">
+                    Blog</li>
+                <li
+                    class="text-xl hidden sm:block hover:underline underline-offset-8 text-gray-800 dark:text-white  cursor-pointer">
+                    Project</li>
+            </ul>
+            <button @click="darkMode = !darkMode"
+                class="focus:outline-none outline-none p-3 bg-gray-800 dark:bg-white dark:text-gray-900 text-white rounded-full">
+                <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                    </path>
+                </svg>
+                <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                </svg>
+            </button>
+        </header>
+        <main class="flex flex-col py-8 ">
+            <div class="flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center  w-full">
+                <div class="flex flex-col justify-start items-start space-y-5 w-full">
+                    <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Ivan Maulana</h1>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Software Engineer
+                    </h2>
+                </div>
+                <img class="rounded-full w-32 h-32 mb-5 sm:mb-0 " src="https://picsum.photos/id/100/200/200" alt="">
+            </div>
+            <div class="max-w-2xl  text-gray-900 dark:text-white text-xl leading-8 space-y-8">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda cum id totam aliquid recusandae
+                    dolorem rem sint ex harum asperiores aspernatur tempore ad, minima tempora earum sit enim
+                    perferendis
+                    neque!
+                </p>
+
+                <p>
+                    dolorem rem sint ex harum asperiores aspernatur tempore ad, minima tempora earum sit enim
+                    perferendis
+                    neque!
+                </p>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-10">Work Experience</h2>
+
+            <div class=" text-gray-900 dark:text-white text-xl leading-8 space-y-8 mt-8">
+                <div class="flex flex-col sm:flex-row w-full ">
+                    <div class="max-w-sm w-full sm:w-1/2 font-bold mb-5 sm:mb-0">
+                        Software Engineer@Extenv
+                    </div>
+                    <div class="w-full">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio possimus
+                        dolorum,
+                        ad
+                        doloremque eos aliquam cupiditate aperiam consequatur repellendus vero labore,
+                        repudiandae
+                        natus
+                        qui mollitia maxime at? Culpa, eaque.
+                    </div>
+                </div>
+                <span class="text-lg">Apr 2021 - Jun 2022</span>
+                <hr class="border-gray-800">
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-10">Education Background</h2>
+
+            <div class=" text-gray-900 dark:text-white text-xl leading-8 space-y-8 mt-8">
+                <span class="text-xl  font-bold">Apr 2021 - Jun 2022</span>
+                <div class="flex flex-col w-full ">
+                    <div class="max-w-sm w-full sm:w-1/2 font-bold ">
+                        SMK Dua Dimensi
+                    </div>
+                    <div class="max-w-sm w-full sm:w-1/2 font-semibold  text-lg">
+                        Rekayasa Perangkat Lunak
+                    </div>
+                    <div class="w-full">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio possimus
+                        dolorum,
+                        ad
+                        doloremque eos aliquam cupiditate aperiam consequatur repellendus vero labore,
+                        repudiandae
+                        natus
+                        qui mollitia maxime at? Culpa, eaque.
+                    </div>
+                </div>
+
+                <hr class="border-gray-800">
+            </div>
+
+        </main>
+        <footer class="flex flex-col space-y-24 justify-center items-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-5 w-full">
+                <ul class="text-xl text-gray-900 dark:text-white space-y-3">
+                    <li><a href="#" class="underline underline-offset-8">Home</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-8">Blog</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-8">Project</a></li>
+                </ul>
+                <ul class="text-xl text-gray-900 dark:text-white space-y-3">
+                    <li><a href="#" class="hover:underline underline-offset-8">Facebook</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-8">Github</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-8">LinkedIn</a></li>
+                </ul>
+                <ul class="text-xl text-gray-900 dark:text-white space-y-3">
+                    <li><a href="#" class="hover:underline underline-offset-8">Twitter</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-8">Instagram</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-8">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="w-full flex justify-center items-center">
+                <button onclick="document.documentElement.scrollTop = 0; document.body.scrollTop = 0;"
+                    class="focus:outline-none outline-none p-3 bg-gray-800 dark:bg-white dark:text-gray-900 text-white rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
